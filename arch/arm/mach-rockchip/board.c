@@ -313,7 +313,7 @@ void board_set_spilayout(void)
 	char *hwrev = env_get("hwrev");
 
 	/* adjust only offsets, size values are same */
-	if (strcmp(hwrev, "rg351mp") == 0)
+	if (strcmp(hwrev, "rg351mp") == 0 || strcmp(hwrev, "rg35") == 0)
 	{
 		/* RG351MP */
 		env_set_hex("st_dtb", 0x3068);
