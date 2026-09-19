@@ -49,7 +49,7 @@ int get_rg351_rev(void)
 		return MODEL_RG351P;
 	else if (!strcmp(hwrev, "rg351v"))
 		return MODEL_RG351V;
-	else if (!strcmp(hwrev, "rg351mp"))
+	else if (!strcmp(hwrev, "rg351mp") || !strcmp(hwrev, "rg35"))
 		return MODEL_RG351MP;
 	return 0;
 
