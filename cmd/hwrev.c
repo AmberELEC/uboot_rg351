@@ -28,18 +28,12 @@ int do_hwrev(cmd_tbl_t *cmdtp, int flag, int argc, char * const argv[])
 		env_set("dtb_uboot", "rg351mp-uboot.dtb");
 		env_set("dtb_kernel", "rk3326-rg351mp-linux.dtb");
 	}
-	/* RG351V, D007 and RG35 */
+	/* RG351V and D007*/
 	else if (check_range(494, 534, hwrev_adc)) {
 		if (check_range(600, 1100, hwdet_adc)) {
 			env_set("hwrev", "d007");
 			env_set("dtb_uboot", "rk3326-d007-linux.dtb");
 			env_set("dtb_kernel", "rk3326-d007-linux.dtb");
-		}
-		else if (check_range(480, 520, hwdet_adc)) {
-			/* RG35: ADC0 around 513, ADC2 around 500. */
-			env_set("hwrev", "rg35");
-			env_set("dtb_uboot", "rg351mp-uboot.dtb");
-			env_set("dtb_kernel", "rk3326-rg35-linux.dtb");
 		}
 		else {
 			env_set("hwrev", "rg351v");
